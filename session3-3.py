@@ -54,10 +54,12 @@ def ex6():
     num = random.randint(1,101)
     mode = choose_mode()
     win = 0
+    played = 1
 
     print("\nTry to guess the number now!")
     if game_engine(num, mode):
         win += 1
+        played += 1
     
     print("\nDo you want to play again?\n1. Yes\n2. No")
     retry_choice = int(input("Enter your option: "))
@@ -69,6 +71,7 @@ def ex6():
             num = random.randint(1,101)
             if game_engine(num, r_mode):
                 win += 1
+                played += 1
         
         elif retry_choice == 2:
             print("Thanks for playing!")
@@ -80,7 +83,7 @@ def ex6():
         print("\nDo you want to play again?\n1. Yes\n2. No")
         retry_choice = int(input("Enter your option: "))
 
-    print(f"You have win {win} times")
+    print(f"You have played {played} rounds:\nwin {win} times\nlose {played-win} times")
 
 def choose_mode():
     print("Choose your mode:\n1.easy \t2.medium\t3.hard")

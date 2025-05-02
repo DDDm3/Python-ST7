@@ -1,5 +1,5 @@
 import random
-def interface():
+def main():
     print("Chào mừng bạn đã đến với Xỉu cùng Tài 101")
     print("Bạn được tặng 100.000VND vào tài khoản")
     account = 100000
@@ -70,4 +70,4 @@ def user_guess():
 def add_money(account):
     pass
 
-interface()
+main()

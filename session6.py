@@ -60,13 +60,23 @@ def set_practice():
         print("Elements in common is", inter_set2)
 
     # Write a Python program to find all the unique words and count the frequency of occurrence from a given list of strings. Use Python set data type.
-    occurrence = ["fox", "what"]
-    occur_set = set(occurrence)
-    string_lst = "what does the fox say".split()
-    string_set = set(string_lst)
+    string_lst = ["I love Vietnam",
+                  "Vietnam love peace",
+                  "I love peace",
+                  "John love I too"]
+    string = ' '.join(string_lst)
+    string_lst = string.split()
 
-    uq_word_set = string_set - occur_set
-    print(uq_word_set)
+    occur_set = set(string_lst)
+    print(f"Unique set of words:", occur_set)
+
+    occur_dict = {}
+    for word in string_lst:
+        if word not in occur_dict.keys():
+            occur_dict[word] = 0
+        occur_dict[word] += 1
+
+    print(occur_dict)
 
     # Given two sets of numbers, write a Python program to find the missing numbers in the second set as compared to the first and vice versa. Use the Python set.
     number_setD = {21, 44, 82, 34, 50, 62, 48, 28}
@@ -78,18 +88,96 @@ def set_practice():
 #================================================================
 # DICTIONARY
 def dictionary_practice():
-# Convert two lists into a dictionary
-# Merge two Python dictionaries into one
-# Print the value of key ‘history’ from the below dict
-# Initialize dictionary with default values
-# Create a dictionary by extracting the keys from a given dictionary
-# Delete a list of keys from a dictionary
-# Check if a value exists in a dictionary
-# Rename key of a dictionary
-# Get the key of a minimum value from the following dictionary
-# Change value of a key in a nested dictionary
-# Counts the number of times characters appear in a text paragraph.
-# Using a dictionary containing keys starting from 1 and values ​​containing prime numbers less than a value N.
+    # Convert two lists into a dictionary
+    id = ["1", "2", "3", "4"]
+    name = ["Anne", "Barek", "Jumei", "Loppy"]
+    classA = dict()
+    
+    for _ in range(len(name)):
+        classA[id[_]] = name[_]
+    print(classA)
+    
+    # Merge two Python dictionaries into one
+    dict1 = {'a': 1, 'b': 2}
+    dict2 = {'b': 3, 'c': 1, 'd': 2}
+
+    for key in dict1:
+        if key in dict2:
+            dict1[key] = [dict1[key], dict2[key]]
+
+    for key in dict2:
+        if key not in dict1:
+            dict1[key] = dict2[key]
+    print(dict1)
+
+    # Print the value of key ‘history’ from the below dict
+
+
+    # Initialize dictionary with default values
+    # value = int(input("Default values you want to initialize: "))
+    # key = ['a', 'b', 'c']
+    # dict0 = dict()
+
+    # for _ in key:
+    #     dict0.update({_:value})
+
+    # print(dict0)
+
+    # Create a dictionary by extracting the keys from a given dictionary
+
+
+    # Delete a list of keys from a dictionary
+    # dict0 = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'f': 5}
+    # print(dict0)
+    
+    # stop = 0
+    # key_lst = []
+    # while stop == 0:
+    #     print("Choose a key or a list of keys to delete")
+    #     choice = input("Enter a key: ")
+    #     key_lst.append(choice)
+
+    #     print("Do you want to delete more?\n1.Y\n2.N")
+    #     u_choice = int(input("Enter a key: "))
+    #     if u_choice == 2:
+    #         stop = -1
+
+    # for key in key_lst:
+    #     dict0.pop(key)
+
+    # print("Dictionary after delete", dict0)
+
+    #   Check if a value exists in a dictionary
+
+
+    # Rename key of a dictionary
+    dict0 = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'f': 5}
+    print(dict0)
+    
+    choice1 = input("Choose a key you want to rename: ")
+    choice2 = input("You want rename as: ")
+
+    new_dict0 = dict()
+    for key in dict0:
+        if key == choice1:
+            new_dict0[choice2] = dict0[key]
+        else:
+            new_dict0[key] = dict0[key]
+
+    print(new_dict0)
+
+    # Get the key of a minimum value from the following dictionary
+
+
+    # Change value of a key in a nested dictionary
+
+
+    # Counts the number of times characters appear in a text paragraph.
+
+
+    # Using a dictionary containing keys starting from 1 and values ​​containing prime numbers less than a value N.
+
+
     pass
 
 #================================================================
